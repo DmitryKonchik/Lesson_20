@@ -2,11 +2,15 @@ import java.util.Scanner;
 
 public class Task_1 {
 
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
 
-    int[] numbers;
+    private int[] numbers;
 
-    int length;
+    public int[] getNumbers() {
+        return numbers;
+    }
+
+    private int length;
 
     public Task_1(int length) {
         this.length = length;
@@ -15,7 +19,6 @@ public class Task_1 {
             numbers[i] = scanner.nextInt();
         }
     }
-
 
 
 }

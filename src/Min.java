@@ -1,6 +1,6 @@
-public class Min implements Runnable{
+public class Min implements Runnable {
 
-    Task_1 task;
+    private Task_1 task;
 
     public Min(Task_1 task) {
         this.task = task;
@@ -10,7 +10,7 @@ public class Min implements Runnable{
     public void run() {
         int min = Integer.MAX_VALUE;
 
-        for (int n : task.numbers) {
+        for (int n : task.getNumbers()) {
             if (min > n) {
                 min = n;
             }

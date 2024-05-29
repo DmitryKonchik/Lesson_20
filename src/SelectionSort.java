@@ -1,8 +1,8 @@
 import java.util.Arrays;
 
-public class SelectionSort implements Runnable{
+public class SelectionSort implements Runnable {
 
-    int[] sortArr;
+    private int[] sortArr;
 
     public SelectionSort(int[] sortArr) {
         this.sortArr = sortArr;

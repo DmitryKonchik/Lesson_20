@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
-public class InsertionSort implements Runnable{
-    int[] sortArr;
+public class InsertionSort implements Runnable {
+    private int[] sortArr;
 
     public InsertionSort(int[] sortArr) {
         this.sortArr = sortArr;
