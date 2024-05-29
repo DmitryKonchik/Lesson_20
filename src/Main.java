@@ -20,24 +20,36 @@ public class Main {
 
         // Не очень понял задание, надо ли сортировать разные массивы одновременно или один массив,
         // но работает два варианта, если сортировать один массив, результаты одинаковые
-        int[] num = new int[10];
+//        int[] num = new int[10];
+//
+//        for (int i = 0; i < num.length; i++) {
+//            Random random = new Random();
+//            num[i] = random.nextInt(100);
+//        }
+//        int[] num1 = num;
+//        int[] num2 = num;
+//
+//
+//        Thread thread1 = new Thread(new InsertionSort(num));
+//        thread1.start();
+//
+//        Thread thread2 = new Thread(new SelectionSort(num1));
+//        thread2.start();
+//
+//        Thread thread3 = new Thread(new BubbleSort(num2));
+//        thread3.start();
 
-        for (int i = 0; i < num.length; i++) {
-            Random random = new Random();
-            num[i] = random.nextInt(100);
-        }
-        int[] num1 = num;
-        int[] num2 = num;
+        // HardTask
 
+        Store store = new Store();
 
-        Thread thread1 = new Thread(new InsertionSort(num));
-        thread1.start();
+        Producer producer = new Producer(store);
+        Consumer consumer = new Consumer(store);
 
-        Thread thread2 = new Thread(new SelectionSort(num1));
+        Thread thread1 = new Thread(producer);
+        Thread thread2 = new Thread(consumer);
         thread2.start();
-
-        Thread thread3 = new Thread(new BubbleSort(num2));
-        thread3.start();
+        thread1.start();
 
     }
 }
